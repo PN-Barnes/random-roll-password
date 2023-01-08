@@ -1,92 +1,47 @@
-# 03 JavaScript: Password Generator
+# random-password-generator
 
-## Your Task
+# Introduction
 
-This week’s homework requires you to modify starter code to create an application that enables employees to generate random passwords based on criteria that they’ve selected. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished, responsive user interface that adapts to multiple screen sizes.
+This application is meant to generate a password that should be adaptable to meet any criteria. When you select the button "Generate Password", you should see a few prompts come up asking you what you would like your password to include. This application will then take your preferences of password characters and randomly generate a password with your parameters and your specified character length. Take a look throughout the page as well as the provided code. Follow the install instructions to properly run the code.
 
-The password can include special characters. If you’re unfamiliar with these, see this [list of password special characters](https://www.owasp.org/index.php/Password_special_characters) from the OWASP Foundation.
+# Install
 
-## User Story
+[github Repository](https://github.com/PN-Barnes/random-password-generator)
 
-```
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
-```
+[VS Code](https://code.visualstudio.com/)
 
-## Acceptance Criteria
+[node.js](https://nodejs.org/en/)
 
-```
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN prompted for character types to include in the password
-THEN I choose lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-```
+# Description
 
-## Mock-Up
+The code found within this application uses functions, variables within global and local scope, if/else statements, confirm, prompt, and alerts throughout the whole deploynment.
 
-The following image shows the web application's appearance and functionality:
+I wrote this code by declaring global variables that need to load before any of the browser prompts start as well as the function can be called. These variables are used to hold data that the function will use to push data and store the users preferred characters.
 
-![The Password Generator application displays a red button to "Generate Password".](./Assets/03-javascript-homework-demo.png)
+After the global variables have loaded within the browswer, the next part is the start of the large function that writes the password to the page. This large function uses a for loop with if statements that use locally declared variables
 
-## Grading Requirements
+Once the local variables are declared, then the if statements take the confirm prompt values to store and check the users preferred password characters. I wrote seperate if statements in order to check each confirm variable individually so one confirm value does not effect another value. It also checks that at least one parameter was selected, if not, there is another alert notifying the user they have to restart the process and at least select one parameter.
 
-This homework is graded based on the following criteria: 
+After all the variables are checked and the arrays are pushed into the array going to be used for character selection.THe for Loop goes into effect with generating random indexes to be used to select a random array and a random index element within that random array. Then, once a character is selected it repeats the process until the generated characters match the user selected character amount. These characters are then stored into what will be the password and join them into one single string, finishing the password generation.
 
-### Technical Acceptance Criteria: 40%
+Moving back up to the top. The event listener calls the function of writepassword when the button is clicked within the document.
 
-* Satisfies all of the preceding acceptance criteria plus the following:
+# References
 
-  * The homework should not produce any errors in the console when you inspect it using Chrome DevTools.
+## [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 
-### Deployment: 32%
+## [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
-* Application deployed at live URL.
+## [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-* Application loads with no errors.
+#### [Scope](https://developer.mozilla.org/en-US/docs/Glossary/Scope)
 
-* Application GitHub URL submitted.
+#### [For Loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
 
-* GitHub repository that contains application code.
+#### [If/Else statements](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
 
-### Application Quality: 15%
+#### [Variables](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
 
-* Application user experience is intuitive and easy to navigate.
+# Credits
 
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the homework instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
-- - -
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+The assignment of password to the button, the HTML, and CSS was written by **Trilogy education services** to start this code work flow. All code of the functionality of the Javascript was written by **Paul Barnes**.
